@@ -1,0 +1,20 @@
+*,body,ul,li,p,span,input{margin: 0;padding: 0;vertical-align:baseline;outline: 0;border:0;}
+body{font-family: "Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","STHeiti","微软雅黑","Microsoft YaHei",sans-serif;word-spacing:1px;}
+input{font-family:"Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","STHeiti","微软雅黑","Microsoft YaHei",sans-serif;vertical-align: middle; }
+a{text-decoration: none;}
+img{border: none;}
+.w-1200{width: 1200px}
+.center{margin: 0 auto}
+.f-r{float: right;}
+.header-logreg{margin: 30px 0 13px 100px;font-size: 14px;line-height: 40px}
+.header-logreg span{margin: 0 5px 0 3px}
+.header-logreg a{color: #000}
+.header-search{margin-top: 30px; }
+.header-search input[type='search']{width: 330px;height: 40px;line-height: 40px;padding-left: 20px;border-radius:30px 0 0 30px;background: #f1f1f1;}
+.header-search input[type='submit']{height: 40px;width: 40px;line-height: 40px;border-radius: 0 30px 30px 0;background: url(../images/icon.png) no-repeat #f1f1f1 8px 11px;margin-left: -5px;cursor: pointer;}
+.top-nav{width: 100%;height: 40px;background: #303030}
+nav ul{list-style: none;height: 40px;line-height: 40px;}
+nav ul li{float: left;width: 100px;font-size: 16px;background: #303030;}
+nav ul li a{color: white;display: block;text-align: center;}
+nav .current{background: #555;border-bottom: #db6d4b solid 3px;height: 37px}
+nav .current-subnavs{background: #555;}
