@@ -2,69 +2,45 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>创业家</title>
+	<title>胡安延的个人站</title>
 	<link rel="stylesheet" type="text/css" href="css/commen.css">
 </head>
 <body>
-	<header class='w-1200 center'>
-		<a href="http://www.iheima.com/"><img src="images/logo.png"></a>
-		<div class="f-r header-logreg">
-			<span><a href=''>登陆</a></span> | <span><a href=''>注册</a></span>
-		</div>
-		<div class="f-r header-search">
-			<from>
-				<input type="search" placeholder='请输入要搜索的文章标题／关键字'>
-				<input type="submit" value>
-			</from>
-		</div>
-	</header>
-	<nav class='top-nav'>
-		<div class='w-1200 center'>
-			<ul id='nav_ul'>
-				<li class="current">
-					<a href="#">首页</a>
-				</li>
-				<li>
-					<a href="#">浏览</a>
-					<ul>
-						<li><a href="">资讯</a></li>
-						<li><a href="">观点</a></li>
-						<li><a href="">项目</a></li>
-						<li><a href="">方法论</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="#">活动</a>
-				</li>
-				<li>
-					<a href="#">杂志</a>
-				</li>
-				<li>
-					<a href="#">牛头</a>
-				</li>
-				<li>
-					<a href="#">i代言</a>
-				</li>
-			</ul>
-		</div>
-	</nav>
+	<div class='nav'>
+		<ul id='nav_ul'>
+			<li>
+				<a class="current" href="#">首页</a>
+			</li>
+			<li>
+				<a href="#">我的作品</a>
+				<ul>
+					<li><a href="#">设计类</a></li>
+					<li><a href="#">制作类</a></li>
+				</ul>
+			</li>
+			<li style="margin-left:250px">
+				<a href="#">我的博客</a>
+			</li>
+			<li>
+				<a href="#">酷站欣赏</a>
+			</li>
+		</ul>
+		<div class='logo'><img src="images/hay_logo.png"></div>
+	</div>
+	<div class='w-1200 center'>
+		<div class="f-l" id='main_left'></div>
+	</div>
 </body>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript">
-	$('#nav_ul ul').hide();
-	$('#nav_ul>li').mouseover(function(){
-		$(this).addClass('current');
+	$('#nav_ul li').mouseover(function(){
+		$(this).children('a').addClass('current');
 		$(this).children('ul').show();
 	})
-	$('#nav_ul>li').mouseout(function(){
-		$(this).removeClass('current');
+	$('#nav_ul li').mouseout(function(){
+		$(this).children('a').removeClass('current');
+		$('#nav_ul>li>a').eq(0).addClass('current');
 		$(this).children('ul').hide();
-	})
-	$('#nav_ul>li>ul>li').mouseover(function(){
-		$(this).addClass('current-subnavs');
-	})
-	$('#nav_ul>li>ul>li').mouseout(function(){
-		$(this).removeClass('current-subnavs');
 	})
 </script>
 </html>
