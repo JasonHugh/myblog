@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>胡安延的个人站</title>
+	<title>胡安延的个人网站</title>
 	<link rel="stylesheet" type="text/css" href="css/commen.css">
 </head>
 <body>
@@ -27,8 +27,27 @@
 		</ul>
 		<div class='logo'><img src="images/hay_logo.png"></div>
 	</div>
-	<div class='w-1200 center'>
-		<div class="f-l" id='main_left'></div>
+	<div class='w-1000 center' id='main'>
+		<div class="f-l" id='main_left'>
+			<img src="images/my_pic.png" class="my-pic glassy-8">
+			<p>你好！我是胡安延，欢迎来到我的个人网站！</p>
+			<iframe width="280" scrolling="no" height="25" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=34&icon=1&num=3"></iframe>
+			<div class='glassy-5'></div>
+		</div>
+		<div class="f-l slide">
+			<ul class="slide-box">
+				<li style="display:list-item"><img src="images/slide_1.jpg" title=""><div class='glassy-8 slide-glass'><p>我的第一个作品<br/>my first</p></div></li>
+				<li><img src="images/slide_2.jpg" title=""><div class='glassy-8 slide-glass'><p>我的第二个作品<br/>my first</p></div></li>
+				<li><img src="images/slide_3.jpg" title=""><div class='glassy-8 slide-glass'><p>我的第三个作品<br/>my first</p></div></li>
+				<li><img src="images/slide_4.jpg" title=""><div class='glassy-8 slide-glass'><p>我的第四个作品<br/>my first</p></div></li>
+			</ul>
+			<ul class="slide-btn">
+				<li class="slide-btn-active"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
 	</div>
 </body>
 <script type="text/javascript" src="js/jquery.js"></script>
@@ -42,5 +61,35 @@
 		$('#nav_ul>li>a').eq(0).addClass('current');
 		$(this).children('ul').hide();
 	})
+	//轮播
+	var img_num = $('.slide-box li').length;
+	$('.slide-btn li').mouseover(function(){
+		var index = $(this).index();
+		var is_now = $('.slide-box li').eq(index).css('display');
+		if(is_now != 'list-item'){
+			$('.slide-btn li').removeClass('slide-btn-active');
+			$(this).addClass('slide-btn-active');
+			$('.slide-box li').fadeOut()
+			$('.slide-box li').eq(index).fadeIn();
+			clearInterval(id);
+			id = setInterval('slide_clock()',4000);
+		}
+	})
+	var id = setInterval('slide_clock()',4000);
+	function slide_clock(){
+		var index = $('.slide-btn li[class="slide-btn-active"]').index();
+		var time = 1000
+		if(index == img_num-1){
+			$('.slide-btn li').removeClass('slide-btn-active');
+			$('.slide-btn li').eq(0).addClass('slide-btn-active');
+			$('.slide-box li').fadeOut(time)
+			$('.slide-box li').eq(0).fadeIn(time);
+		}else{
+			$('.slide-btn li').removeClass('slide-btn-active');
+			$('.slide-btn li').eq(index+1).addClass('slide-btn-active');
+			$('.slide-box li').fadeOut(time)
+			$('.slide-box li').eq(index+1).fadeIn(time);
+		}
+	}
 </script>
 </html>
