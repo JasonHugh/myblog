@@ -7,16 +7,7 @@
     <link href="../../images/favicon.ico" rel="SHORTCUT ICON">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="pageA.css">
-    <style type="text/css">
-    .charector {
-        width: 151px;
-        height: 291px;
-        background: url(images/boy.png) -0px -291px no-repeat;
-        position: absolute;
-        left: 6%;
-        top: 55%;
-    }
-    </style>
+    <link rel="stylesheet" type="text/css" href="boy_animation.css">
 </head>
 
 <body>
@@ -35,33 +26,13 @@
             <!-- 第三副画面 -->
             <li> 页面3 </li>
         </ul>
-        <div id="boy" class="charector"></div>
+        <div id="boy" class="boy"></div>
     </div>
     
 </body>
 <script src="../../js/jquery.js"></script>
-<script type="text/javascript" src="swipe.js"></script>
-<script type="text/javascript">
-    var swipe = Swipe($('#content'));
-    var getValue = function(className) {
-        var $elem = $('' + className + '');
-            // 走路的路线坐标
-        return {
-            height: $elem.height(),
-            top: $elem.position().top
-        };
-    };
-    
-    // 路的Y轴
-    var pathY = function() {
-        var data = getValue('.a_background_middle');
-        return data.top + data.height / 2;
-    }();
-
-    var $boy = $("#boy");
-    var boyHeight = $boy.height();
-    $boy.css({
-        top: pathY - boyHeight + 25
-    });
+<script type="text/javascript" src="Swipe.js"></script>
+<script type="text/javascript" src="BoyWalk.js"></script>
+<script type="text/javascript" src='qixi.js'></script>
 </script>
 </html>
