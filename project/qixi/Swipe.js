@@ -21,11 +21,11 @@ function Swipe(container){
         });
     });
     var swipe = {};
-    swipe.scrollTo = function(x,speed){
+    swipe.scrollTo = function(speed,x){
         element.css({
             'transition-timing-function': 'linear',
             'transition-duration': speed+'ms',
-            'transform': 'translate3d(-' + x + 'px,0px,0px)' //设置页面X轴移动
+            'transform': 'translate3d(-' + $(document).width()*x + 'px,0px,0px)' //设置页面X轴移动
         });
         return this;
     } 
