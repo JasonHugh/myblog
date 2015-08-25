@@ -30,7 +30,7 @@ function BoyWalk(){
     var boyInsideTop = (boyHeight - (boyHeight*scale))/2;
     //--------------小男孩起始位置------------------//
     boy.css({
-        top: pathY - (boyHeight * scale) - boyInsideTop + 20
+        top: pathY - (boyHeight * scale) - boyInsideTop + 10
     });
 
 
@@ -51,13 +51,13 @@ function BoyWalk(){
     function calculateDist(direction, proportion) {
         return (direction == "x" ? $(document).width() : $(document).height()) * proportion;
     }
-    // 用animate做运动
+    // 用transition做运动
     function stratRun(options, runTime) {
         var dfdPlay = $.Deferred();
         // 恢复走路
         restoreWalk();
         // 运动的属性
-        boy.animate(options,runTime,'linear',function(){dfdPlay.resolve();});
+        boy.transition(options,runTime,'linear',function(){dfdPlay.resolve();});
         return dfdPlay;
     }
     // 开始走路
@@ -73,6 +73,63 @@ function BoyWalk(){
         return d1;
     }
 
+    // 走进商店
+    function walkToShop(runTime) {
+        var defer = $.Deferred();
+        var doorObj = $('.door')
+        // 门的坐标
+        var offsetDoor = doorObj.offset();
+        var doorOffsetLeft = offsetDoor.left;
+        // 小孩当前的坐标
+        var offsetBoy     = boy.offset();
+        var boyOffetLeft = offsetBoy.left;
+
+        // 当前需要移动的坐标
+        instanceX = (doorOffsetLeft + doorObj.width() / 2) - (boyOffetLeft + boy.width() / 2) + boyInsideLeft;
+        //alert(instanceX)
+
+        // 开始走路
+        var walkPlay = stratRun({
+            transform: 'translateX(' + instanceX + 'px) scale(0.2)',
+            opacity: 0.1
+        }, runTime);
+        // 走路完毕
+        walkPlay.done(function() {
+            boy.css({
+                opacity: 0
+            })
+            defer.resolve();
+        })
+        return defer;
+    }
+
+    // 走出店
+    function walkOutShop(runTime) {
+        var defer = $.Deferred();
+        restoreWalk();
+        //开始走路
+        var walkPlay = stratRun({
+            transform: 'translateX(' + instanceX + 'px) scale('+scale+')',
+            opacity: 1
+        }, runTime);
+        //走路完毕
+        walkPlay.done(function() {
+            defer.resolve();
+        });
+        return defer; 
+    }
+    //取花
+    function takeFlower() {
+        //增加延时等待效果
+        var defer = $.Deferred();
+        setTimeout(function() {
+            //取花
+            boy.addClass('slowFlolerWalk')
+            defer.resolve()
+        }, 1000)
+        return defer;
+    }
+
     return {
         // 开始走路
         walkTo: function(time, proportionX, proportionY) {
@@ -80,12 +137,21 @@ function BoyWalk(){
             var distY = calculateDist('y', proportionY)
             return walkRun(time, distX, distY);
         },
+        // 走进商店
+        toShop: function() {
+            return walkToShop.apply(null, arguments);
+        },
+        // 走出商店
+        outShop: function() {
+            return walkOutShop.apply(null, arguments);
+        },
         // 停止走路
         stopWalk: function() {
             pauseWalk();
         },
-        setColoer:function(value){
-            boy.css('background-color',value)
+        // 取花
+        takeFlower: function() {
+            return takeFlower();
         }
     }
 }

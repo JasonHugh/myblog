@@ -22,12 +22,16 @@ function Swipe(container){
     });
     var swipe = {};
     swipe.scrollTo = function(speed,x){
+        var dfdPlay = $.Deferred();
         element.css({
             'transition-timing-function': 'linear',
             'transition-duration': speed+'ms',
             'transform': 'translate3d(-' + $(document).width()*x + 'px,0px,0px)' //设置页面X轴移动
         });
-        return this;
+        setTimeout(function(){
+            dfdPlay.resolve();
+        },speed)
+        return dfdPlay;
     } 
     return swipe;
 }

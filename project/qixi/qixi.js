@@ -2,26 +2,51 @@ $(function(){
     var swipe = Swipe($('#content'));
     //swipe.scrollTo(0, 1);
     var boy = BoyWalk();
-    boy.walkTo(2000, 0.2)
+    boy.walkTo(1400, 0.2)
         .then(function() {
             //走完第一段路页面开始滚动
-            swipe.scrollTo(5000, 1);
+            return swipe.scrollTo(7000, 1);
         }).then(function() {
             //走第二段路
-            return boy.walkTo(5000, 0.5);
+            return boy.walkTo(3500, 0.5);
         }).then(function() {
-            openDoor();
+            boy.stopWalk();
+            return openDoor();
         }).then(function(){
-            shutDoor();
+            lamp.bright();
+        }).then(function(){
+            return boy.toShop(2000);
+        }).then(function(){
+            return boy.takeFlower();
+        }).then(function(){
+            bird.fly();
+            return boy.outShop(2000);
+        }).then(function(){
+            return shutDoor();
+        }).then(function(){
+            lamp.dark();
         });
 
+    var scale = $(document).height()/1000;
     $(".cloud:first").addClass('cloud1Anim');
     $(".cloud:last").addClass('cloud2Anim');
     $("#sun").addClass('rotation');
+    //右边飞鸟
+    var bird = {
+        elem: $(".bird"),
+        fly: function() {
+            this.elem.addClass('birdFly');
+            this.elem.transition({
+                right: $(document).width() + 'px'
+            }, 10000, 'linear');
+        }
+    };
+    //大小自适应
+    $('.cloud').css('transform','scale(' + scale + ')');
+    $('#sun').css('transform','scale(' + scale + ')');
+    $('.bird').css('transform','scale(' + scale + ')');
 
-    //云的大小自适应
-    $('.cloud').css('transform','scale(' + $(document).height()/1000 + ')');
-
+    //门动画
     function doorAction(left, right, time) {
         var $door = $('.door');
         var doorLeft = $('.door-left');
@@ -46,6 +71,16 @@ $(function(){
         
          return defer;
     }
+    // 灯动画
+    var lamp = {
+        elem: $('.b_background'),
+        bright: function() {
+            this.elem.addClass('lamp-bright')
+        },
+        dark: function() {
+            this.elem.removeClass('lamp-bright')
+        }
+    };
 
     // 开门
     function openDoor() {
@@ -56,4 +91,5 @@ $(function(){
     function shutDoor() {
         return doorAction('0%', '50%', 2000);
     }
+
 })
