@@ -152,6 +152,17 @@ function BoyWalk(){
         // 取花
         takeFlower: function() {
             return takeFlower();
+        },
+        // 复位初始状态
+        resetOriginal: function() {
+            this.stopWalk();
+            // 恢复图片
+            boy.removeClass('slowWalk slowFlolerWalk');
+        },
+        // 转身动作
+        rotate: function() {
+           restoreWalk();
+           boy.addClass('boy-rotate');
         }
     }
 }
