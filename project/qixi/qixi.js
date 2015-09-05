@@ -1,34 +1,8 @@
 $(function(){
     var swipe = Swipe($('#content'));
-    swipe.scrollTo(0, 2);
+    //swipe.scrollTo(0, 2);
     var boy = BoyWalk();
-    //boy.walkTo(1400, 0.2)
-    //    .then(function() {
-    //        //走完第一段路页面开始滚动
-    //        return swipe.scrollTo(7000, 2);
-    //    }).then(function() {
-    //        //走第二段路
-    //        return boy.walkTo(3500, 0.5);
-    //    }).then(function() {
-    //        boy.stopWalk();
-    //        return openDoor();
-    //    }).then(function(){
-    //        lamp.bright();
-    //    }).then(function(){
-    //        return boy.toShop(2000);
-    //    }).then(function(){
-    //        return boy.takeFlower();
-    //    }).then(function(){
-    //        bird.fly();
-    //        return boy.outShop(2000);
-    //    }).then(function(){
-    //        swipe.scrollTo(7000, 2);
-    //        boy.walkTo(7000, 0.2);
-    //        return shutDoor();
-    //    }).then(function(){
-    //        lamp.dark();
-    //    }).then(function(){
-    //    });
+    
 
     var scale = $(document).height()/1000;
     $(".cloud:first").addClass('cloud1Anim');
@@ -117,15 +91,35 @@ $(function(){
     girl.setOffset();
 
 
-
-    boy.walkTo(2000, 0.15)
+    boy.walkTo(1400, 0.2)
+        .then(function() {
+            //走完第一段路页面开始滚动
+            return swipe.scrollTo(7000, 1);
+        }).then(function() {
+            //走第二段路
+            return boy.walkTo(3500, 0.5);
+        }).then(function() {
+            boy.stopWalk();
+            return openDoor();
+        }).then(function(){
+            lamp.bright();
+        }).then(function(){
+            return boy.toShop(2000);
+        }).then(function(){
+            return boy.takeFlower();
+        }).then(function(){
+            bird.fly();
+            return boy.outShop(2000);
+        }).then(function(){
+            swipe.scrollTo(7000, 2);
+            boy.walkTo(7000, 0.15)
             .then(function() {
                 // 第二次走路到桥上left,top
                 return boy.walkTo(1500, 0.25, ($('.c_background_middle').offset().top - $('.girl').height()/2 - $('.girl').height()*scale/2) / $(document).height());
             })
             .then(function() {
                 // 实际走路的比例
-                var proportionX = ($('.girl').offset().left - $('.boy').width() + $('.girl').width() / 4) / $(document).width();
+                var proportionX = ($('.girl').offset().left - $('.boy').width() + $('.girl').width() / 16) / $(document).width();
                 // 第三次桥上直走到小女孩面前
                 return boy.walkTo(2500, proportionX);
             }).then(function() {
@@ -139,6 +133,11 @@ $(function(){
                     snowflake();
                 }, 1000);
             });
+            return shutDoor();
+        }).then(function(){
+            lamp.dark();
+        });
+    
 
 
     var snowflakeURl = [

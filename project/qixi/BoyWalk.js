@@ -157,7 +157,7 @@ function BoyWalk(){
         resetOriginal: function() {
             this.stopWalk();
             // 恢复图片
-            boy.removeClass('slowWalk slowFlolerWalk');
+            boy.removeClass('slowWalk slowFlolerWalk').addClass('boyWithFlower');
         },
         // 转身动作
         rotate: function() {

@@ -60,6 +60,9 @@
     -webkit-animation-play-state: paused;
     -moz-animation-play-state: paused;
 }
+.boyWithFlower {
+  background-position: -150px -0px;
+}
 /*带花走*/
 .slowFlolerWalk {
    -webkit-animation-name: person-floler-slow;
