@@ -46,6 +46,7 @@ img{border: none;}
 .project-article a{text-decoration: underline;color: #333;}
 .project-article a:hover{color: #000;}
 .project-content{margin-left: 1em;margin-top: 5px;color: #777}
+.project-article .tag{color:#FF0033}
 /*页脚*/
 .footer{width: 100%;height: 30px;text-align: center;margin-top: 40px;background:#3f2e2e;line-height: 30px;color: #fff;font-size: 13px }
 .footer a{text-decoration: underline;color: #fff;margin-left: 10px}
