@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>待评价临时订单</title>
+<meta name="viewport" content="width=device-width;initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link href="css/ratchet.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<header class="bar bar-nav">
+      <a  class="icon icon-list pull-right" href="#popover"></a>
+      <h1 class="title">待评价临时订单</h1>
+      <a  class="icon icon-left-nav pull-left" href='javascript:history.go(-1)'></a>
+</header>
+<div id="popover" class="popover">
+    <ul class="table-view">
+      <li class="table-view-cell">临时订单<ul class="table-view">
+      <li class="table-view-cell"><a href='waitConfirm.html' data-ignore="push">待确认</a></li>
+      <li class="table-view-cell"><a href='waitReview.html' data-ignore="push">待评价</a></li>
+    </ul></li>
+      <li class="table-view-cell">包车订单<ul class="table-view">
+      <li class="table-view-cell"><a href='waitConfirm1.html' data-ignore="push">待确认</a></li>
+    </ul></li>
+      <li class="table-view-cell">我的账单<ul class="table-view">
+      <li class="table-view-cell"><a href='charge.html' data-ignore="push">账户充值</a></li>
+      <li class="table-view-cell"><a href='waitPay.html' data-ignore="push">待付账单</a></li>
+      <li class="table-view-cell"><a href='alrPay.html' data-ignore="push">已付账单</a></li>
+    </ul></li>
+    </ul>
+</div>
+<div class="content">
+    <ul class="table-view">
+      <li class="table-view-cell">
+        <a class="navigate-right" href="#myModalexample">
+          <span>订单号:201509190001</span><span style='float:right;color:#0099CC'>2015-09-18</span>
+        </a>
+      </li>
+      <li class="table-view-cell">
+        <a class="navigate-right" href="#myModalexample">
+          <span>订单号:201509190001</span><span style='float:right;color:#0099CC'>2015-09-18</span>
+        </a>
+      </li>
+    </ul>
+    <div id="myModalexample" class="modal">
+      <header class="bar bar-nav">
+        <a class="icon icon-close pull-right" href="#myModalexample"></a>
+        <h1 class="title">201509190001</h1>
+      </header>
+
+      <div class="content">
+        <ul class="table-view modelbox">
+          <li class="table-view-cell">
+              <span>订单号:</span><span style='float:right;color:#0099CC'>201509190001</span>
+          </li>
+          <li class="table-view-cell">
+              <span>日期/时间:</span><span style='float:right;color:#0099CC'>2015-09-18</span>
+          </li>
+          <li class="table-view-cell">
+              <span>城市/地点:</span><span style='float:right;color:#0099CC;width:150px'>杭州市/西湖国际大厦->绍兴市/咸亨酒店</span>
+          </li>
+          <li class="table-view-cell">
+              <span>人数:</span><span style='float:right;color:#0099CC'>30</span>
+          </li>
+          <li class="table-view-cell">
+              <span>供应商:</span><span style='float:right;color:#0099CC'>杭州新晨客运有限公司</span>
+          </li>
+          <li class="table-view-cell">
+              <span>价格:</span><span style='float:right;color:#0099CC'>1300</span>
+          </li>
+          <li class="table-view-cell" style="height:80px">
+              <a class="btn btn-primary btn-block btn-outlined" style="width:40%;" href='review.html' data-ignore="push">评价</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</div>
+
+</body>
+<script type="text/javascript" src='js/jquery-2.1.1.min.js'></script>
+<script src="js/ratchet.js"></script>
+<script type="text/javascript">
+</script>
+</html>

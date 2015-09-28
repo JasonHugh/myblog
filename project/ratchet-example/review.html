@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>临时订单</title>
+<meta name="viewport" content="width=device-width;initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link href="css/ratchet.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<header class="bar bar-nav">
+      <a  class="icon icon-list pull-right" href="#popover"></a>
+      <h1 class="title">临时订单</h1>
+      <a  class="icon icon-left-nav pull-left" href='javascript:history.go(-1)'></a>
+</header>
+<div id="popover" class="popover">
+    <ul class="table-view">
+      <li class="table-view-cell">临时订单<ul class="table-view">
+      <li class="table-view-cell"><a href='waitConfirm.html' data-ignore="push">待确认</a></li>
+      <li class="table-view-cell"><a href='waitReview.html' data-ignore="push">待评价</a></li>
+    </ul></li>
+      <li class="table-view-cell">包车订单<ul class="table-view">
+      <li class="table-view-cell"><a href='waitConfirm1.html' data-ignore="push">待确认</a></li>
+    </ul></li>
+      <li class="table-view-cell">我的账单<ul class="table-view">
+      <li class="table-view-cell"><a href='charge.html' data-ignore="push">账户充值</a></li>
+      <li class="table-view-cell"><a href='waitPay.html' data-ignore="push">待付账单</a></li>
+      <li class="table-view-cell"><a href='alrPay.html' data-ignore="push">已付账单</a></li>
+    </ul></li>
+    </ul>
+</div>
+<div class="content">
+    <ul class="table-view modelbox">
+        <li class="table-view-cell">
+            <span>用车企业:</span><span style='float:right;color:#0099CC'>野驴户外运动俱乐部</span>
+        </li>
+        <li class="table-view-cell">
+            <span>联系人:</span><span style='float:right;color:#0099CC'>徐枫   133********</span>
+        </li>
+        <li class="table-view-cell">
+            <span>人数:</span><span style='float:right;color:#0099CC'>30</span>
+        </li>
+        <li class="table-view-cell">
+              <div style="margin-top:10px;float:left">价格:</div>
+              <input type="number" value='1300' style="width:100px;float:right;margin:0">
+        </li>
+        <li class="table-view-cell">
+              是否付款:<div class="toggle myToggle1">
+                        <div class="toggle-handle"></div>
+                      </div>
+                      <div class="toggle myToggle1 active" id='fukuan'>
+                        <div class="toggle-handle"></div>
+                      </div>
+        </li>
+        <li class="table-view-cell fukuan" style="display:none">
+              <div style="margin-top:10px;float:left">预付款:</div>
+              <input type="text" value='390' style="width:100px;float:right;margin:0">
+        </li>
+        <li class="table-view-cell fukuan" style="display:none">
+              <div style="margin-top:10px;float:left">尾款:</div>
+              <select style="width:180px;height:30px;float:right;margin:0">
+                  <option value="">行程结束5天内付款</option>
+                  <option value="">行程结束15天内付款</option>
+                  <option value="">行程结束30天内付款</option>
+              </select>
+        </li>
+        <li class="table-view-cell">
+              是否需要发票:<div class="toggle myToggle2 active">
+                        <div class="toggle-handle"></div>
+                      </div>
+                      <div class="toggle myToggle2" id='fapiao'>
+                        <div class="toggle-handle"></div>
+                      </div>
+        </li>
+        <li class="table-view-cell fapiao" style="display:none">
+              <div style="margin-top:10px;float:left">台头:</div>
+              <input type="text" value='杭州野驴户外运动俱乐部' style="width:200px;float:right;margin:0">
+        </li>
+        <li class="table-view-cell fapiao" style="display:none">
+              <div style="margin-top:10px;float:left">地址:</div>
+              <input type="text" value='杭州市西斗门路12号' style="width:200px;float:right;margin:0">
+        </li>
+        <li class="table-view-cell" style="height:50px">
+            <a href="#myModalexample" class="btn btn-primary btn-block" style="width:50%;left:0;border-radius:0">行程计划</a>
+            <a href="#myModalexample1" class="btn btn-positive btn-block" style="width:50%;right:0;border-radius:0">车辆</a>
+        </li>
+        <li class="table-view-cell">
+            评价星级：
+			  <span class="icon icon-star-filled star-review"></span>
+			  <span class="icon icon-star-filled star-review"></span>
+			  <span class="icon icon-star-filled star-review"></span>
+			  <span class="icon icon-star-filled star-review"></span>
+			  <span class="icon icon-star star-review"></span>
+        </li>
+        <li class="table-view-cell tag-review-box">
+            <span style='float:left;margin-right:6px'>评价标签：</span>
+            <p style="float:left;width:68%">
+			  <a class="btn btn-positive btn-outlined tag-review">司机服务好</a>
+			  <a class="btn btn-positive btn-outlined tag-review">车内设施好</a>
+			  <a class="btn btn-positive btn-outlined tag-review">车厢干净</a>
+			</p>
+        </li>
+        <li class="table-view-cell tag-review-add">
+              <div style="margin-top:7px;float:left">添加标签:</div>
+              <input type="text" value='' style="width:120px;margin:0 0 0 18px">
+              <span class="icon icon-plus" style='margin-left:10px'></span>
+        </li>
+        <li class="table-view-cell" style="height:80px">
+            <a class="btn btn-primary btn-block btn-outlined" style="width:40%;">提交</a>
+        </li>
+    </ul>
+    <div id="myModalexample" class="modal">
+      <header class="bar bar-nav">
+        <a class="icon icon-close pull-right" href="#myModalexample"></a>
+        <h1 class="title">201509190001</h1>
+      </header>
+
+      <div class="content">
+        <ul class="table-view modelbox">
+          <li class="table-view-cell">
+              <span>2015/9/15 8:00</span><span style='float:right;color:#0099CC'>100km</span><br/>杭州市/西湖国际大厦->绍兴市/咸亨酒店
+          </li>
+          <li class="table-view-cell">
+              <span>2015/9/15 12:00</span><span style='float:right;color:#0099CC'>20km</span><br/>绍兴市/咸亨酒店->绍兴市/沈园
+          </li>
+          <li class="table-view-cell">
+              <span>2015/9/15 18:00</span><span style='float:right;color:#0099CC'>120km</span><br/>绍兴市/国际酒店->杭州市/西湖国际大厦
+          </li>
+          <li class="table-view-cell">
+              <span style='float:right;color:#0099CC'>总计：240km</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="myModalexample1" class="modal">
+      <header class="bar bar-nav">
+        <a class="icon icon-close pull-right" href="#myModalexample1"></a>
+        <h1 class="title">201509190001</h1>
+      </header>
+
+      <div class="content">
+        <ul class="table-view modelbox">
+          <li class="table-view-cell">
+              <span>车型</span><span style='float:right;color:#0099CC'>金龙</span><br/><span>客位数</span><span style='float:right;color:#0099CC'>37</span><br/><span>车牌号</span><span style='float:right;color:#0099CC'>浙AM502K</span><br/><span>司机</span><span style='float:right;color:#0099CC'>张希忠 13852961539</span><br/><span>从业资格证</span><span style='float:right;color:#0099CC'>*********</span><br/><span>道路经营许可证</span><span style='float:right;color:#0099CC'>*********</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+</div>
+
+</body>
+<script type="text/javascript" src='js/jquery-2.1.1.min.js'></script>
+<script src="js/ratchet.js"></script>
+<script type="text/javascript">
+$('.myToggle1').click(function(){
+  if(!$('#fukuan').hasClass('active')){
+      $('.fukuan').slideDown();
+  }else{
+    $('.fukuan').slideUp();
+  }
+})
+$('.myToggle2').click(function(){
+  if($('#fapiao').hasClass('active')){
+      $('.fapiao').slideDown();
+  }else{
+    $('.fapiao').slideUp();
+  }
+})
+$('.star-review').click(function(){
+	var num = $(this).index();
+	$('.star-review').removeClass('icon-star-filled').addClass('icon-star');
+	for(var i = 0;i<num+1;i++){
+		$('.star-review').eq(i).removeClass('icon-star').addClass('icon-star-filled');
+	}
+})
+$('.tag-review-box').on('click','.tag-review',function(){
+	if($(this).hasClass('btn-outlined')){
+		$(this).removeClass('btn-outlined');
+	}else{
+		$(this).addClass('btn-outlined');
+	}
+})
+$('.tag-review-add .icon-plus').click(function(){
+	var review = $('.tag-review-add input').val()
+	if(review != ''){
+		$('.tag-review-box p').append(' <a class="btn btn-positive btn-outlined tag-review">'+review+'</a>');
+	}
+	
+})
+</script>
+</html>

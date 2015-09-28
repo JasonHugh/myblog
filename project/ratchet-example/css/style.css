@@ -1,0 +1,13 @@
+body{font-family:'微软雅黑';}
+.content{background: url(../images/bg.jpg) repeat;}
+.navigate-right{font-size: 14px}
+a.active{background:#0099CC !important;color:#fff !important;}
+.modelbox .table-view-cell{padding-right:10px}
+.bar-nav{background:#0099cc;}
+.bar-nav .title,.bar-nav a{color:#fff;}
+.card,.table-view{border-radius: 0 !important}
+.table-view-cell{border-left:10px solid #6ed8f6;}
+.popover .table-view-cell{border-left:none;}
+.popover .table-view{border-radius: 10px !important}
+.icon-star,.icon-star-filled{color: #FF6666}
+.tag-review{position:relative;margin:0 0 5px 0;}
