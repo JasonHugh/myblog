@@ -1,0 +1,154 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>车辆管理</title>
+  <link href="../assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
+  <link href="../assets/css/bui-min.css" rel="stylesheet" type="text/css" />
+  <link href="../css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div id="grid"></div>
+  <div id="content" class="hide">
+      <form id="J_Form" class="form-horizontal">
+        <div class="row">
+          <div class="control-group span8">
+            <label class="control-label"><s>*</s>品牌：</label>
+            <div class="controls">
+              <input name="pp" type="text" data-rules="{required:true}" class="input-normal control-text">
+            </div>
+          </div>
+          <div class="control-group span8">
+            <label class="control-label"><s>*</s>型号：</label>
+            <div class="controls">
+              <input name="xh" type="text" data-rules="{required:true}" class="input-normal control-text">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="control-group span8">
+            <label class="control-label"><s>*</s>客位数：</label>
+            <div class="controls">
+              <input name="kws" type="text" data-rules="{required:true}" class="input-normal control-text">
+            </div>
+          </div>
+          <div class="control-group span8">
+            <label class="control-label"><s>*</s>购置年份：</label>
+            <div class="controls">
+              <input name="gznf" type="text" class="calendar" />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="control-group span8">
+            <label class="control-label"><s>*</s>车牌号：</label>
+            <div class="controls">
+              <input name="cph" type="text" data-rules="{required:true}" class="input-normal control-text">
+            </div>
+          </div>
+          <div class="control-group span8">
+            <label class="control-label"><s>*</s>司机：</label>
+            <div class="controls">
+              <select  data-rules="{required:true}"  name="sj" class="input-normal"> 
+                <option value="张荣泉 13857136925">张荣泉 13857136925</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="control-group span16">
+            <label class="control-label" style="width:120px"><s>*</s>道路营运资格证：</label>
+            <div class="controls">
+              <input name="zg" type="text" data-rules="{required:true}" class="input-normal control-text">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="control-group span16">
+            <label class="control-label">上传照片：</label>
+            <div class="controls">
+              <a class="button button-small file">车前脸照</a>
+              <a class="button button-small file">车侧面照</a>
+              <a class="button button-small file">车内部照</a>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <input type="file" value="上传复印件" style=" width:110px;height:40px;position:absolute;left:-110px;top:0;z-index:999;filter:alpha(opacity=0);-moz-opacity:0;opacity:0;">
+</body>
+
+<script type="text/javascript" src="../assets/js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="../assets/js/bui-min.js"></script>
+<script type="text/javascript" src="../assets/js/config-min.js"></script>
+<script type="text/javascript">
+BUI.use('common/page');
+BUI.use(['bui/grid','bui/data'],function (Grid,Data) {
+
+    var columns = [{title:'品牌',dataIndex:'pp'},
+            {title:'车型',dataIndex:'xh'},
+            {title:'购置年份',dataIndex:'gznf'},
+            {title:'客位数',dataIndex:'kws'},
+           {title:'牌照',dataIndex:'cph'},
+           {title:'道路运营许可证',dataIndex:'zg'},
+           {title:'司机',dataIndex:'sj'},
+            {title : '操作',renderer : function(){
+              return '<span class="btn-edit button button-small"><i class="icon-edit"></i>编辑</span>';
+            }}
+          ],
+      //默认的数据
+      data = [
+      ],
+      store = new Data.Store({
+        data:data
+      }),
+      editing = new Grid.Plugins.DialogEditing({
+        contentId : 'content',
+        triggerCls : 'btn-edit'
+      }),
+      grid = new Grid.Grid({
+        render : '#grid',
+        columns : columns,
+        forceFit : true,
+        store : store,
+        plugins : [Grid.Plugins.CheckSelection,editing],
+        tbar:{
+          items : [{
+            btnCls : 'button button-small',
+            text : '<i class="icon-plus"></i>添加',
+            listeners : {
+              'click' : addFunction
+            }
+          },
+          {
+            btnCls : 'button button-small',
+            text : '<i class="icon-remove"></i>删除',
+            listeners : {
+              'click' : delFunction
+            }
+          }]
+        }
+
+      });
+    grid.render();
+
+    function addFunction(){
+      var newData = {name :''};
+      editing.add(newData); //添加记录后，直接编辑
+    }
+
+    function delFunction(){
+      var selections = grid.getSelection();
+      store.remove(selections);
+    }
+    var logEl = $('#log');
+    $('#btnSave').on('click',function(){
+
+      var records = store.getResult();
+      logEl.text(BUI.JSON.stringify(records));
+    });
+});
+$('.file').click(function(){
+  $(':file').click()
+})
+</script>
+</html>

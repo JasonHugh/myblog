@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <title> 找巴网后台管理系统</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <link href="assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
+   <link href="assets/css/bui-min.css" rel="stylesheet" type="text/css" />
+   <link href="assets/css/main.css" rel="stylesheet" type="text/css" />
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+ </head>
+ <body>
+   <div class="header">
+    <div class="dl-title"><span class="">找巴网后台管理系统 | 杭州新晨客运有限公司 企业号：HD7878</span></div>
+    <div class="dl-log">欢迎您，<span class="dl-log-user">包风华</span>
+        <a href="###" title="退出系统" class="dl-log-quit">[退出]</a>
+    </div>
+   </div>
+   <div class="content">
+    <div class="dl-main-nav">
+      <ul id="J_Nav"  class="nav-list ks-clear">
+        <li class="nav-item dl-selected"><div class="nav-item-inner nav-storage">业务管理</div></li>
+        <li class="nav-item"><div class="nav-item-inner nav-storage">调度管理</div></li>
+      </ul>
+    </div>
+    <ul id="J_NavContent" class="dl-tab-conten">
+ 
+    </ul>
+      
+   </div>
+  <script type="text/javascript" src="assets/js/jquery-1.8.1.min.js"></script>
+  <script type="text/javascript" src="assets/js/bui-min.js"></script>
+  <script type="text/javascript" src="assets/js/config-min.js"></script>
+  <script>
+     BUI.use('common/main',function(){
+      var config = [{
+          id:'menu',
+          menu:[{
+              text:'我的客户',
+              items:[
+                {id:'0-menu',text:'我的客户',href:'yewu/myCustomer.html'}
+              ]
+            },{
+              text:'临时用车',
+              items:[
+                {id:'1-menu',text:'待安排车辆',href:'yewu/waitDeal.html'},
+                {id:'2-menu',text:'待签合同',href:'yewu/waitSign.html'},
+                {id:'3-menu',text:'待执行',href:'yewu/waitDo.html'},
+                {id:'4-menu',text:'待付款',href:'yewu/waitPay.html'}
+              ]
+            },{
+              text:'长期包车',
+              items:[
+                {id:'5-menu',text:'待安排车辆',href:'yewu/waitDeal1.html'},
+                {id:'6-menu',text:'待签合同',href:'yewu/waitSign1.html'},
+                {id:'7-menu',text:'已签合同',href:'yewu/alrSign.html'}
+              ]
+            },{
+              text:'账单管理',
+              items:[
+                {id:'8-menu',text:'月账单',href:'yewu/monthcheck.html'},
+                {id:'9-menu',text:'月详单',href:'yewu/monthDetail.html'}
+              ]
+            }]
+          },{
+          id:'diao',
+          menu:[{
+              text:'司机管理',
+              items:[
+                {id:'0-menu',text:'司机管理',href:'diaodu/driver.html'}
+              ]
+            },{
+              text:'车辆管理',
+              items:[
+                {id:'1-menu',text:'车辆管理',href:'diaodu/car.html'}
+              ]
+            },{
+              text:'临时调度',
+              items:[
+                {id:'2-menu',text:'待安排临时订单',href:'diaodu/waitArrange.html'}
+              ]
+            },{
+              text:'包车调度',
+              items:[
+                {id:'3-menu',text:'待安排包车订单',href:'diaodu/waitArrange1.html'},
+                {id:'4-menu',text:'排班',href:'diaodu/paiban.html'}
+              ]
+            }]
+          }];
+      new PageUtil.MainPage({
+        modulesConfig : config
+      });
+    });
+ 
+  </script>
+ </body>
+</html>

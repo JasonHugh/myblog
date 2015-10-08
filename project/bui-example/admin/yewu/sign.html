@@ -1,0 +1,57 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>签署合同</title>
+	<link href="../assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
+	<link href="../assets/css/bui-min.css" rel="stylesheet" type="text/css" />
+  	<link href="../css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<h1>签署合同</h1>
+	<h2>用车企业：野驴户外运动俱乐部<span style='margin-left:80px'>联系人：徐枫   133********</span></h2>
+	<h2>人数：30人</h2>
+	<h2>行程计划：</h2>
+	<div id="grid" style="margin-top:10px"></div>
+	<h2>车辆：</h2>
+	<div id="grid1" style="margin-top:10px"></div>
+	<h2><a href="printSign.html" class="button">打印合同</a><button class="button">上传合同</button><button class="button">签署完成</button></h2>
+</body>
+<script type="text/javascript" src="../assets/js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="../assets/js/bui-min.js"></script>
+<script type="text/javascript" src="../assets/js/config-min.js"></script>
+<script type="text/javascript">
+BUI.use('common/page');
+BUI.use('bui/grid',function (Grid) {
+    var data = [{name:'2015/9/16 8:00',day:'杭州市/西湖国际大厦',address:'绍兴市/咸亨酒店',custom:'100km'},{name:'2015/9/15 12:00',day:'绍兴市/咸亨酒店',address:'绍兴市/沈园',custom:'20km'},{name:'2015/9/15 18:00',day:'绍兴市/国际酒店',address:'杭州市/西湖国际大厦',custom:'120km'},{address:'总计里程：',custom:'240km'}]
+ 
+        grid = new Grid.SimpleGrid({
+          render : '#grid', //显示Grid到此处
+          columns : [
+            {title:'出发日期/时间',dataIndex:'name',width:110},
+            {title:'出发城市/地点',dataIndex:'day',width:150},
+            {title:'到达城市/地点',dataIndex:'address',width:150},
+			{title:'里程数',dataIndex:'custom',width:50}
+          ]
+        });
+      grid.render();
+      grid.showData(data);
+  });
+BUI.use('bui/grid',function (Grid) {
+    var data = [{name:'金龙',day:'37',address:'浙AM502K',custom:'张希忠 13852961539',cong:'*********',rood:'*********'}]
+ 
+        grid = new Grid.SimpleGrid({
+          render : '#grid1', //显示Grid到此处
+          columns : [
+            {title:'车型',dataIndex:'name',width:50},
+            {title:'客位数',dataIndex:'day',width:30},
+            {title:'车牌号',dataIndex:'address',width:70},
+			{title:'司机',dataIndex:'custom',width:100},
+            {title:'从业资格证',dataIndex:'cong',width:80},
+			{title:'道路经营许可证',dataIndex:'rood',width:80}
+          ]
+        });
+      grid.render();
+      grid.showData(data);
+  });
+</script>
+</html>

@@ -1,0 +1,12 @@
+.button{border-radius:0;}
+input{margin:0;padding: 10px !important;}
+select{height:25px;}
+*,body{font-family: '微软雅黑' !important}
+body{font-size:13px;}
+table{font-size:13px;}
+#grid,#grid1{margin:30px;}
+h2{font-weight: normal;margin:10px 30px;}
+h1{margin:30px;font-size: 24px;}
+.calendar{width:140px !important;}
+#J_Form .row{margin-left:30px;}
+#J_Form .control-label{text-align:left !important;width:80px;}
