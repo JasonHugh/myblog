@@ -1,0 +1,14 @@
+$('.icon-list').click(function(){
+  if($('.slide-nav').offset().left==0)
+    $('.slide-nav').animate({left:-150},500)
+  else
+    $('.slide-nav').animate({left:0},500)
+})
+$('.content').click(function(){
+  if($('.slide-nav').offset().left==0)
+    $('.slide-nav').animate({left:-150},500)
+})
+$('header').click(function(){
+  if($('.slide-nav').offset().left==0)
+    $('.slide-nav').animate({left:-150},500)
+})

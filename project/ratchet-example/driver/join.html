@@ -12,9 +12,8 @@
 <body>
 
 <header class="bar bar-nav">
-    <a  class="icon icon-list pull-right" href="#popover"></a>
+    <a  class="icon icon-list pull-left"></a>
     <h1 class="title">加入企业</h1>
-    <a  class="icon icon-left-nav pull-left" href='javascript:history.go(-1)'></a>
 </header>
 <div id="popover" class="popover">
     <ul class="table-view">
@@ -35,10 +34,20 @@
       </li>
     </ul>
 </div>
+<div class='slide-nav'>
+    <ul class="nav">
+      <li><a href='index.html' data-ignore="push">加盟客运公司</a></li>
+      <li><a href='myTask.html' data-ignore="push">我的任务</a></li>
+    </ul>
+</div>
 
 </body>
 <script type="text/javascript" src='../js/jquery-2.1.1.min.js'></script>
 <script src="../js/ratchet.js"></script>
 <script type="text/javascript">
+var viewport = document.querySelector("meta[name=viewport]");
+var winWidths = window.screen.width;
+viewport.setAttribute('content', 'width='+winWidths+',initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui');
 </script>
+<script type="text/javascript" src='../js/commen.js'></script>
 </html>
