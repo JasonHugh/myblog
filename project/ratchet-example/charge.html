@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>我的账户</title>
-<meta name="viewport" content="width=device-width;initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <link href="css/ratchet.css" rel="stylesheet">
@@ -114,9 +114,12 @@
 </div>
 
 </body>
-<script type="text/javascript" src='js/jquery-2.1.1.min.js'></script>
 <script src="js/ratchet.js"></script>
-<script type="text/javascript" src="js/push.js"></script>
+<script type="text/javascript" src='js/jquery-2.1.1.min.js'></script>
 <script type="text/javascript">
+var viewport = document.querySelector("meta[name=viewport]");
+var winWidths = window.screen.width;
+alert(winWidths)
+viewport.setAttribute('content', 'width='+winWidths+',initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui');
 </script>
 </html>
