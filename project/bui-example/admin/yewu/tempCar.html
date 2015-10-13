@@ -71,10 +71,44 @@
           </div>
         </div>
       	<h2>行程计划</h2>
-        <h2><button class="button button-small"><i class='icon-plus'></i>增加行程</button></h2>
         <div id="grid" style="margin-top:0"></div>
       	<h2><button type="submit" class="button">提交</button></h2>
       </form>
+
+
+
+  <div id="content" class="hide add-box">
+      <form id="J_Form" class="form-horizontal">
+        <div class="row">
+          <div class="control-group span8">
+            <label class="control-label"><s>*</s>出发日期/时间：</label>
+            <div class="controls">
+              <input type="text" name="id" class="calendar calendar-time"/>
+            </div>
+          </div>
+          <div class="control-group span8">
+            <label class="control-label"><s>*</s>里程数：</label>
+            <div class="controls">
+              <input name="address" type="text" data-rules="{required:true}" class="input-normal control-text">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="control-group span8">
+            <label class="control-label"><s>*</s>出发城市/地点：</label>
+            <div class="controls">
+              <input name="name" type="text" data-rules="{required:true}" class="input-normal control-text">
+            </div>
+          </div>
+          <div class="control-group span8 ">
+            <label class="control-label"><s>*</s>到达城市/地点：</label>
+            <div class="controls">
+              <input name="day" type="text" data-rules="{required:true}" class="input-normal control-text">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
 </body>
 <script type="text/javascript" src="../assets/js/jquery-1.8.1.min.js"></script>
 <script type="text/javascript" src="../assets/js/bui-min.js"></script>
@@ -88,21 +122,65 @@ BUI.use('bui/form',function (Form) {
 
     form.render();
   });
-BUI.use('bui/grid',function (Grid) {
-    var data = [{id:'2015/9/15 8:00',name:'杭州市/西湖国际大厦',day:'绍兴市/咸亨酒店',address:'100km'},{id:'2015/9/15 12:00',name:'绍兴市/咸亨酒店',day:'绍兴市/沈园',address:'20km'},{id:'2015/9/15 18:00',name:'绍兴市/国际酒店',day:'杭州市/西湖国际大厦',address:'120km'},{day:'总计里程：',address:'240km'}]
- 
-        grid = new Grid.SimpleGrid({
-          render : '#grid', //显示Grid到此处
-          columns : [
+BUI.use(['bui/grid','bui/data'],function (Grid,Data) {
+
+    var columns = [
             {title:'出发日期/时间',dataIndex:'id',width:80},
             {title:'出发城市/地点',dataIndex:'name',width:100},
             {title:'到达城市/地点',dataIndex:'day',width:100,renderer:Grid.Format.dateRenderer},
             {title:'里程数',dataIndex:'address',width:50}
-          ]
-        });
-      grid.render();
-      grid.showData(data);
-  });
+          ],
+      //默认的数据
+      data = [{id:'2015-9-15 8:00',name:'杭州市/西湖国际大厦',day:'绍兴市/咸亨酒店',address:'100km'},{id:'2015-9-15 12:00',name:'绍兴市/咸亨酒店',day:'绍兴市/沈园',address:'20km'},{id:'2015-9-15 18:00',name:'绍兴市/国际酒店',day:'杭州市/西湖国际大厦',address:'120km'}],
+      store = new Data.Store({
+        data:data
+      }),
+      editing = new Grid.Plugins.DialogEditing({
+        contentId : 'content',
+        triggerCls : 'btn-edit'
+      }),
+      grid = new Grid.Grid({
+        render : '#grid',
+        columns : columns,
+        forceFit : true,
+        store : store,
+        plugins : [Grid.Plugins.CheckSelection,editing],
+        tbar:{
+          items : [{
+            btnCls : 'button button-small',
+            text : '<i class="icon-plus"></i>增加行程',
+            listeners : {
+              'click' : addFunction
+            }
+          },
+          {
+            btnCls : 'button button-small',
+            text : '<i class="icon-remove"></i>删除',
+            listeners : {
+              'click' : delFunction
+            }
+          }]
+        }
+
+      });
+    grid.render();
+
+    function addFunction(){
+      var newData = {name :''};
+      editing.add(newData); //添加记录后，直接编辑
+    }
+
+    function delFunction(){
+      var selections = grid.getSelection();
+      store.remove(selections);
+    }
+    var logEl = $('#log');
+    $('#btnSave').on('click',function(){
+
+      var records = store.getResult();
+      logEl.text(BUI.JSON.stringify(records));
+    });
+});
 $('input[name="fee"]').change(function(){
   if($(this).val() == 1){
     $('.fee').slideDown()

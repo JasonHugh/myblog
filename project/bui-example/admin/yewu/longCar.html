@@ -56,12 +56,44 @@
           </div>
         </div>
 	        	<h2>班次</h2>
-        <h2><button class="button button-small"><i class='icon-plus'></i>增加班次</button></h2>
       		<div id="grid" style="margin-top:0"></div>
       	<div class="row" >
       		<button class="button">提交</button>
       	</div>
       </form>
+
+      <div id="content" class="hide add-box">
+      <form id="J_Form" class="form-horizontal">
+        <div class="row">
+          <div class="control-group span8">
+            <label class="control-label"><s>*</s>班次：</label>
+            <div class="controls">
+              <input type="text" class="calendar"/>
+            </div>
+          </div>
+          <div class="control-group span8">
+            <label class="control-label"><s>*</s>里程数：</label>
+            <div class="controls">
+              <input name="address" type="number" data-rules="{required:true}" class="input-normal control-text">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="control-group span8">
+            <label class="control-label"><s>*</s>出发城市/地点：</label>
+            <div class="controls">
+              <input name="name" type="text" data-rules="{required:true}" class="input-normal control-text">
+            </div>
+          </div>
+          <div class="control-group span8 ">
+            <label class="control-label"><s>*</s>到达城市/地点：</label>
+            <div class="controls">
+              <input name="day" type="text" data-rules="{required:true}" class="input-normal control-text">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
 </body>
 <script type="text/javascript" src="../assets/js/jquery-1.8.1.min.js"></script>
 <script type="text/javascript" src="../assets/js/bui-min.js"></script>
@@ -75,12 +107,10 @@ BUI.use('bui/form',function (Form) {
 
     form.render();
   });
-BUI.use('bui/grid',function (Grid) {
-    var data = [{id:'0001',name:'8:00',day:'亲亲家园',address:'海创园',stop:'望月社区、淘宝城',cnum:'37',carnum:'1',price:'250'},{id:'0002',name:'7:50',day:'拱墅佳苑',address:'淘宝城',stop:'机动车辆管理所',cnum:'45',carnum:'1',price:'280'},{id:'0003',name:'18:00',day:'海创园',address:'亲亲家园',stop:'淘宝城、望月社区',cnum:'37',carnum:'1',price:'250'},{id:'0004',name:'18:00',day:'淘宝城',address:'拱墅佳苑',stop:'机动车辆管理所',cnum:'45',carnum:'1',price:'280'}]
- 
-        grid = new Grid.SimpleGrid({
-          render : '#grid', //显示Grid到此处
-          columns : [
+
+BUI.use(['bui/grid','bui/data'],function (Grid,Data) {
+
+    var columns = [
             {title:'班次序号',dataIndex:'id',width:80},
             {title:'出发时间',dataIndex:'name',width:80},
             {title:'出发地',dataIndex:'day',width:100},
@@ -89,10 +119,57 @@ BUI.use('bui/grid',function (Grid) {
             {title:'客位数要求',dataIndex:'cnum',width:50},
             {title:'车数量',dataIndex:'carnum',width:50},
             {title:'每趟价格',dataIndex:'price',width:50}
-          ]
-        });
-      grid.render();
-      grid.showData(data);
-  });
+          ],
+      //默认的数据
+      data = [{id:'0001',name:'8:00',day:'亲亲家园',address:'海创园',stop:'望月社区、淘宝城',cnum:'37',carnum:'1',price:'250'},{id:'0002',name:'7:50',day:'拱墅佳苑',address:'淘宝城',stop:'机动车辆管理所',cnum:'45',carnum:'1',price:'280'},{id:'0003',name:'18:00',day:'海创园',address:'亲亲家园',stop:'淘宝城、望月社区',cnum:'37',carnum:'1',price:'250'},{id:'0004',name:'18:00',day:'淘宝城',address:'拱墅佳苑',stop:'机动车辆管理所',cnum:'45',carnum:'1',price:'280'}],
+      store = new Data.Store({
+        data:data
+      }),
+      editing = new Grid.Plugins.DialogEditing({
+        contentId : 'content',
+        triggerCls : 'btn-edit'
+      }),
+      grid = new Grid.Grid({
+        render : '#grid',
+        columns : columns,
+        forceFit : true,
+        store : store,
+        plugins : [Grid.Plugins.CheckSelection,editing],
+        tbar:{
+          items : [{
+            btnCls : 'button button-small',
+            text : '<i class="icon-plus"></i>增加班次',
+            listeners : {
+              'click' : addFunction
+            }
+          },
+          {
+            btnCls : 'button button-small',
+            text : '<i class="icon-remove"></i>删除',
+            listeners : {
+              'click' : delFunction
+            }
+          }]
+        }
+
+      });
+    grid.render();
+
+    function addFunction(){
+      var newData = {name :''};
+      editing.add(newData); //添加记录后，直接编辑
+    }
+
+    function delFunction(){
+      var selections = grid.getSelection();
+      store.remove(selections);
+    }
+    var logEl = $('#log');
+    $('#btnSave').on('click',function(){
+
+      var records = store.getResult();
+      logEl.text(BUI.JSON.stringify(records));
+    });
+});
 </script>
 </html>

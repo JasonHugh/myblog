@@ -9,4 +9,6 @@ h2{font-weight: normal;margin:10px 30px;}
 h1{margin:30px;font-size: 24px;}
 .calendar{width:140px !important;}
 #J_Form .row{margin-left:30px;}
-#J_Form .control-label{text-align:left !important;width:80px;}
+.control-label{text-align:left !important;width:80px;}
+
+.add-box .control-label{width:200px !important;}
