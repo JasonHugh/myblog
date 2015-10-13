@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>新增长期包车</title>
+<meta name="viewport" content="width=device-width;initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link href="../css/ratchet.css" rel="stylesheet">
+<link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<header class="bar bar-nav">
+      <a  class="icon icon-list pull-left"></a>
+      <h1 class="title">新增长期包车</h1>
+</header>
+<div class="content">
+    <ul class="table-view modelbox detail">
+      <li class="table-view-cell">
+          <span>客户:</span><select style="width:78%;height:30px;float:right;margin:0">
+                  <option value="">【企业】杭州野驴户外运动俱乐部</option>
+                  <option value="">【个人】包风华</option>
+              </select>
+      </li>
+      <li class="table-view-cell">
+          <span>联系人:</span><input type="text" value='' style="width:78%;float:right;margin:0">
+      </li>
+      <li class="table-view-cell">
+          <span>期限:</span><input type="text" value='' style="width:38%;float:right;margin:0;margin-left:5px"><input type="text" value='' style="width:38%;float:right;margin:0">
+      </li>
+      <li class="table-view-cell">
+          <span>价格:</span><input type="number" value='' style="width:78%;float:right;margin:0">
+      </li>
+          
+          <li class="table-view-cell">
+                <span>结算费用:</span>
+                <select style="width:70%;height:30px;float:right;margin:0">
+                    <option value="">一个月结算一次</option>
+                    <option value="">两个月结算一次</option>
+                    <option value="">三个月结算一次</option>
+                </select>
+          </li>
+          <li class="table-view-cell">
+                是否需要发票:<div class="toggle myToggle2 active">
+                          <div class="toggle-handle"></div>
+                        </div>
+                        <div class="toggle myToggle2" id='fapiao'>
+                          <div class="toggle-handle"></div>
+                        </div>
+          </li>
+          <li class="table-view-cell fapiao" style="display:none">
+                <div style="margin-top:10px;float:left">台头:</div>
+                <input type="text" value='杭州野驴户外运动俱乐部' style="width:78%;float:right;margin:0">
+          </li>
+          <li class="table-view-cell fapiao" style="display:none">
+                <div style="margin-top:10px;float:left">地址:</div>
+                <input type="text" value='杭州市西斗门路12号' style="width:78%;float:right;margin:0">
+          </li>
+          <li class="table-view-cell" style="height:50px">
+            <a href="#myModalexample" class="btn btn-primary btn-block" style="width:50%;left:0;border-radius:0">班次</a>
+            <a href="#myModalexample1" class="btn btn-positive btn-block" style="width:50%;right:0;border-radius:0">增加班次</a>
+        </li>
+          <li class="table-view-cell" style="height:60px">
+            <a href="waitDeal1.html" data-ignore="push" class="btn btn-primary btn-block btn-outlined" style="width:50%;left:48%;border-radius:10px">提交</a>
+        </li>
+    </ul>
+    <div id="myModalexample" class="modal">
+      <header class="bar bar-nav">
+        <a class="icon icon-close pull-right" href="#myModalexample"></a>
+        <h1 class="title">班次</h1>
+      </header>
+
+      <div class="content">
+        <ul class="table-view modelbox">
+          <li class="table-view-cell">
+              序号：001<span style='float:right;color:#0099CC'>250元</span><br/><span>出发时间：8:00</span><br/>亲亲家园->海创园<br>经停点：望月社区、淘宝城<br>客位数要求：37<br>车数量：1
+          </li>
+          <li class="table-view-cell">
+              序号：002<span style='float:right;color:#0099CC'>280元</span><br/><span>出发时间：7:50</span><br/>拱墅佳苑->淘宝城<br>经停点：机动车辆管理所<br>客位数要求：45<br>车数量：1
+          </li>
+          <li class="table-view-cell">
+              序号：003<span style='float:right;color:#0099CC'>250元</span><br/><span>出发时间：18:00</span><br/>海创园->亲亲家园<br>经停点：淘宝城、望月社区<br>客位数要求：37<br>车数量：1
+          </li>
+          <li class="table-view-cell">
+              序号：004<span style='float:right;color:#0099CC'>280元</span><br/><span>出发时间：18:00</span><br/>淘宝城->拱墅佳苑<br>经停点：机动车辆管理所<br>客位数要求：45<br>车数量：1
+          </li>
+          <li class="table-view-cell">
+              <span style='float:right;color:#0099CC'>总价：1060元</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="myModalexample1" class="modal">
+      <header class="bar bar-nav">
+        <a class="icon icon-close pull-right" href="#myModalexample1"></a>
+        <h1 class="title">增加班次</h1>
+      </header>
+
+      <div class="content">
+        <ul class="table-view modelbox">
+            <li class="table-view-cell">
+                <span>出发时间:</span>
+                <input type="text" value='' style="width:70%;float:right;margin:0">
+            </li>
+            <li class="table-view-cell">
+                  <span style="margin-top:6px;float:left">出发地:</span>
+                  <input type="text" value='' style="width:70%;float:right;margin:0">
+            </li>
+            <li class="table-view-cell">
+                <span style="margin-top:6px;float:left">目的地:</span>
+                <input type="text" value='' style="width:70%;float:right;margin:0">
+            </li>
+            <li class="table-view-cell">
+                <span style="margin-top:6px;float:left">经停点:</span>
+                <input type="text" value='' style="width:70%;float:right;margin:0">
+            </li>
+            <li class="table-view-cell">
+                <span style="margin-top:6px;float:left">客位数要求:</span>
+                <input type="text" value='' style="width:65%;float:right;margin:0">
+            </li>
+            <li class="table-view-cell">
+                <span style="margin-top:6px;float:left">车数量:</span>
+                <input type="number" value='' style="width:70%;float:right;margin:0">
+            </li>
+            <li class="table-view-cell">
+                <span style="margin-top:6px;float:left">每趟价格:</span>
+                <input type="number" value='' style="width:70%;float:right;margin:0">
+            </li>
+            <li class="table-view-cell" style="height:80px">
+                <a href='longCar.html' data-ignore="push" class="btn btn-primary btn-block btn-outlined" style="width:200px;border-radius:10px;left:50%;margin-left:-100px;background:#5db9de;color:#fff">确认</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+</div>
+
+<div class='slide-nav'>
+    <ul class="nav">
+      <li>我的客户<ul class="sub-nav">
+      <li><a href='myCustomer.html' data-ignore="push">我的客户</a></li>
+    </ul></li>
+      <li>临时用车<ul class="sub-nav">
+      <li><a href='waitDeal.html' data-ignore="push">待安排车辆</a></li>
+      <li><a href='waitSign.html' data-ignore="push">待签合同</a></li>
+      <li><a href='waitDo.html' data-ignore="push">待执行</a></li>
+      <li><a href='waitPay.html' data-ignore="push">待付款</a></li>
+    </ul></li>
+      <li>长期包车<ul class="sub-nav">
+      <li><a href='waitDeal1.html' data-ignore="push">待安排车辆</a></li>
+      <li><a href='waitSign1.html' data-ignore="push">待签合同</a></li>
+      <li><a href='alrSign.html' data-ignore="push">已签合同</a></li>
+    </ul></li>
+      <li>账单管理<ul class="sub-nav">
+      <li><a href='monthcheck.html' data-ignore="push">月账单</a></li>
+      <li><a href='monthDetail.html' data-ignore="push">月详单</a></li>
+    </ul></li>
+    </ul>
+</div>
+</body>
+<script type="text/javascript" src='../js/jquery-2.1.1.min.js'></script>
+<script src="../js/ratchet.js"></script>
+<script type="text/javascript">
+$('.myToggle1').click(function(){
+  if(!$('#fukuan').hasClass('active')){
+      $('.fukuan').slideDown();
+  }else{
+    $('.fukuan').slideUp();
+  }
+})
+$('.myToggle2').click(function(){
+  if($('#fapiao').hasClass('active')){
+      $('.fapiao').slideDown();
+  }else{
+    $('.fapiao').slideUp();
+  }
+})
+
+var viewport = document.querySelector("meta[name=viewport]");
+var winWidths = window.screen.width;
+viewport.setAttribute('content', 'width='+winWidths+',initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui');
+</script>
+<script type="text/javascript" src='../js/commen.js'></script>
+</html>

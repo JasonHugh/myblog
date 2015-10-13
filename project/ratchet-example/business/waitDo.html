@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>待执行</title>
+<meta name="viewport" content="width=device-width;initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link href="../css/ratchet.css" rel="stylesheet">
+<link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<header class="bar bar-nav">
+      <a  class="icon icon-list pull-left"></a>
+      <h1 class="title">待执行</h1>
+</header>
+<div class="content">
+    <ul class="table-view box-list">
+      <li class="table-view-cell">
+        <div class='box'>￥1300</div>
+        <a class="navigate-right" href="#myModalexample">
+          <span>杭州市/西湖国际大厦<br/>绍兴市/咸亨酒店</span>
+        </a>
+      </li>
+    </ul>
+    <div id="myModalexample" class="modal">
+      <header class="bar bar-nav">
+        <a class="icon icon-close pull-right" href="#myModalexample"></a>
+        <h1 class="title">详情</h1>
+      </header>
+
+      <div class="content">
+        <ul class="table-view modelbox detail">
+          <li class="table-view-cell">
+              <span><img src="../images/icon-detail2.png" alt=""> 日期/时间:</span><span style='float:right;color:#0099CC'>2015-9-16 8:00</span>
+          </li>
+          <li class="table-view-cell">
+              <span><img src="../images/icon-detail3.png" alt=""> 城市/地点:</span><span style='float:right;color:#0099CC;width:58%'>杭州市/西湖国际大厦->绍兴市/咸亨酒店</span>
+          </li>
+          <li class="table-view-cell">
+              <span><img src="../images/icon-detail4.png" alt=""> 人数:</span><span style='float:right;color:#0099CC'>30人</span>
+          </li>
+          <li class="table-view-cell">
+              <span><img src="../images/icon-detail5.png" alt=""> 客户:</span><span style='float:right;color:#0099CC;width:58%'>徐三多/杭州野驴户外运动俱乐部</span>
+          </li>
+          <li class="table-view-cell">
+              <span><img src="../images/icon-detail6.png" alt=""> 价格:</span><span style='float:right;color:#0099CC'>1300元</span>
+          </li>
+          <li class="table-view-cell" style="height:80px;border-radius:10px">
+              <a class="btn btn-primary btn-block" style="width:200px;border-radius:10px;left:50%;margin-left:-100px;background:#5db9de" href='waitDo.html' data-ignore="push">预 付 款</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</div>
+
+<div class='slide-nav'>
+    <ul class="nav">
+      <li>我的客户<ul class="sub-nav">
+      <li><a href='myCustomer.html' data-ignore="push">我的客户</a></li>
+    </ul></li>
+      <li>临时用车<ul class="sub-nav">
+      <li><a href='waitDeal.html' data-ignore="push">待安排车辆</a></li>
+      <li><a href='waitSign.html' data-ignore="push">待签合同</a></li>
+      <li><a href='waitDo.html' data-ignore="push">待执行</a></li>
+      <li><a href='waitPay.html' data-ignore="push">待付款</a></li>
+    </ul></li>
+      <li>长期包车<ul class="sub-nav">
+      <li><a href='waitDeal1.html' data-ignore="push">待安排车辆</a></li>
+      <li><a href='waitSign1.html' data-ignore="push">待签合同</a></li>
+      <li><a href='alrSign.html' data-ignore="push">已签合同</a></li>
+    </ul></li>
+      <li>账单管理<ul class="sub-nav">
+      <li><a href='monthcheck.html' data-ignore="push">月账单</a></li>
+      <li><a href='monthDetail.html' data-ignore="push">月详单</a></li>
+    </ul></li>
+    </ul>
+</div>
+</body>
+<script type="text/javascript" src='../js/jquery-2.1.1.min.js'></script>
+<script src="../js/ratchet.js"></script>
+<script type="text/javascript">
+var viewport = document.querySelector("meta[name=viewport]");
+var winWidths = window.screen.width;
+viewport.setAttribute('content', 'width='+winWidths+',initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui');
+</script>
+<script type="text/javascript" src='../js/commen.js'></script>
+</html>

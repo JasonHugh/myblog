@@ -24,9 +24,9 @@ body{font-family:'微软雅黑';}
 .detail span{color:#93998f;line-height:30px;}
 
 
-.slide-nav{position:absolute;height:100%;width:200px;left:-200px;top: 0;background-color:rgba(0,0,0,0.8); z-index:99999;}
-.slide-nav ul{margin:0;padding:0;background: transparent;color: #fff;width: 100%;list-style: none;}
-.slide-nav ul li {width: 100%;margin:0;padding:0;list-style: none;margin:15px 30px}
-.slide-nav .nav{margin-top:30px;}
+.slide-nav{overflow: scroll; position:absolute;height:100%;width:200px;left:-200px;top: 0;background-color:rgba(0,0,0,0.8); z-index:99999;}
+.slide-nav ul{margin:0;padding:0;background: transparent;color: #fff;list-style: none;}
+.slide-nav ul li {width: 140px;margin:0;padding:0;list-style: none;margin:15px 30px}
+.slide-nav .nav{margin:30px 0;}
 .slide-nav a{color: #fff}
 .icon-list{margin-left:10px;}

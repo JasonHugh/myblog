@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>签署合同</title>
+<meta name="viewport" content="width=device-width;initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link href="../css/ratchet.css" rel="stylesheet">
+<link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<header class="bar bar-nav">
+      <a  class="icon icon-list pull-left"></a>
+      <h1 class="title">签署合同</h1>
+</header>
+<div class="content">
+    <ul class="table-view modelbox">
+        <li class="table-view-cell">
+            <span>用车企业:</span><span style='float:right;color:#0099CC'>野驴户外运动俱乐部</span>
+        </li>
+        <li class="table-view-cell">
+            <span>联系人:</span><span style='float:right;color:#0099CC'>徐枫   133********</span>
+        </li>
+        <li class="table-view-cell">
+            <span>人数:</span><span style='float:right;color:#0099CC'>30</span>
+        </li>
+        <li class="table-view-cell" style="height:50px">
+            <a href="#myModalexample" class="btn btn-primary btn-block" style="width:50%;left:0;border-radius:0">行程计划</a>
+            <a href="#myModalexample1" class="btn btn-positive btn-block" style="width:50%;right:0;border-radius:0">车辆</a>
+        </li>
+        <li class="table-view-cell" style="height:80px">
+            <a href='waitSign.html' data-ignore="push" class="btn btn-primary btn-block btn-outlined" style="width:200px;border-radius:10px;left:50%;margin-left:-100px;background:#5db9de;color:#fff">确认</a>
+        </li>
+    </ul>
+    <div id="myModalexample" class="modal">
+      <header class="bar bar-nav">
+        <a class="icon icon-close pull-right" href="#myModalexample"></a>
+        <h1 class="title">行程计划</h1>
+      </header>
+
+      <div class="content">
+        <ul class="table-view modelbox">
+          <li class="table-view-cell">
+              <span>2015/9/15 8:00</span><span style='float:right;color:#0099CC'>100km</span><br/>杭州市/西湖国际大厦->绍兴市/咸亨酒店
+          </li>
+          <li class="table-view-cell">
+              <span>2015/9/15 12:00</span><span style='float:right;color:#0099CC'>20km</span><br/>绍兴市/咸亨酒店->绍兴市/沈园
+          </li>
+          <li class="table-view-cell">
+              <span>2015/9/15 18:00</span><span style='float:right;color:#0099CC'>120km</span><br/>绍兴市/国际酒店->杭州市/西湖国际大厦
+          </li>
+          <li class="table-view-cell">
+              <span style='float:right;color:#0099CC'>总计：240km</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="myModalexample1" class="modal">
+      <header class="bar bar-nav">
+        <a class="icon icon-close pull-right" href="#myModalexample1"></a>
+        <h1 class="title">车辆</h1>
+      </header>
+
+      <div class="content">
+        <ul class="table-view modelbox">
+          <li class="table-view-cell">
+              <span>车型</span><span style='float:right;color:#0099CC'>金龙</span><br/><span>客位数</span><span style='float:right;color:#0099CC'>37</span><br/><span>车牌号</span><span style='float:right;color:#0099CC'>浙AM502K</span><br/><span>司机</span><span style='float:right;color:#0099CC'>张希忠 13852961539</span><br/><span>从业资格证</span><span style='float:right;color:#0099CC'>*********</span><br/><span>道路经营许可证</span><span style='float:right;color:#0099CC'>*********</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+</div>
+
+<div class='slide-nav'>
+    <ul class="nav">
+      <li>我的客户<ul class="sub-nav">
+      <li><a href='myCustomer.html' data-ignore="push">我的客户</a></li>
+    </ul></li>
+      <li>临时用车<ul class="sub-nav">
+      <li><a href='waitDeal.html' data-ignore="push">待安排车辆</a></li>
+      <li><a href='waitSign.html' data-ignore="push">待签合同</a></li>
+      <li><a href='waitDo.html' data-ignore="push">待执行</a></li>
+      <li><a href='waitPay.html' data-ignore="push">待付款</a></li>
+    </ul></li>
+      <li>长期包车<ul class="sub-nav">
+      <li><a href='waitDeal1.html' data-ignore="push">待安排车辆</a></li>
+      <li><a href='waitSign1.html' data-ignore="push">待签合同</a></li>
+      <li><a href='alrSign.html' data-ignore="push">已签合同</a></li>
+    </ul></li>
+      <li>账单管理<ul class="sub-nav">
+      <li><a href='monthcheck.html' data-ignore="push">月账单</a></li>
+      <li><a href='monthDetail.html' data-ignore="push">月详单</a></li>
+    </ul></li>
+    </ul>
+</div>
+</body>
+<script type="text/javascript" src='../js/jquery-2.1.1.min.js'></script>
+<script src="../js/ratchet.js"></script>
+<script type="text/javascript">
+$('.myToggle1').click(function(){
+  if(!$('#fukuan').hasClass('active')){
+      $('.fukuan').slideDown();
+  }else{
+    $('.fukuan').slideUp();
+  }
+})
+$('.myToggle2').click(function(){
+  if($('#fapiao').hasClass('active')){
+      $('.fapiao').slideDown();
+  }else{
+    $('.fapiao').slideUp();
+  }
+})
+</script>
+<script type="text/javascript">
+var viewport = document.querySelector("meta[name=viewport]");
+var winWidths = window.screen.width;
+viewport.setAttribute('content', 'width='+winWidths+',initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui');
+</script>
+<script type="text/javascript" src='../js/commen.js'></script>
+</html>
