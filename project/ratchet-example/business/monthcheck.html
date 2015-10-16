@@ -49,13 +49,13 @@
           <li class="table-view-cell">
             <a class="navigate-right" href='#myModalexample'>
               <div class='box'>出</div>
-              <span class='font-13'>徐翔/杭州制氧机制造有限公司</span><br/><span class='font-13'>金额：601500/601500</span>
+              <span class='font-13'>徐翔/杭州制氧机制造有限公司</span><br/><span class='font-13'>金额：40000/10000</span>
             </a>
           </li>
           <li class="table-view-cell">
             <a class="navigate-right" href='#myModalexample1'>
               <div class='box' style="background:#88b864">付</div>
-              <span class='font-13'>马飞/杭州中青旅行社有限公司</span><br/><span class='font-13'>金额：40000/10000</span>
+              <span class='font-13'>马飞/杭州中青旅行社有限公司</span><br/><span class='font-13'>金额：601500/601500</span>
             </a>
           </li>
         </ul>
@@ -66,7 +66,7 @@
           <li class="table-view-cell">
             <a class="navigate-right" href='#myModalexample'>
               <div class='box'>出</div>
-              <span class='font-13'>徐翔/杭州制氧机制造有限公司</span><br/><span class='font-13'>金额：601500/601500</span>
+              <span class='font-13'>徐翔/杭州制氧机制造有限公司</span><br/><span class='font-13'>金额：40000/10000</span>
             </a>
           </li>
         </ul>
@@ -76,7 +76,7 @@
           <li class="table-view-cell">
             <a class="navigate-right" href='#myModalexample1'>
               <div class='box' style="background:#88b864">付</div>
-              <span class='font-13'>马飞/杭州中青旅行社有限公司</span><br/><span class='font-13'>金额：40000/10000</span>
+              <span class='font-13'>马飞/杭州中青旅行社有限公司</span><br/><span class='font-13'>金额：601500/601500</span>
             </a>
           </li>
         </ul>
@@ -98,13 +98,14 @@
               <span>出车次数:</span><span style='float:right;color:#0099CC'>600次</span>
           </li>
           <li class="table-view-cell">
-              <span>金额:</span><span style='float:right;color:#0099CC'>601500/601500</span>
+              <span>金额:</span><span style='float:right;color:#0099CC'>40000/10000</span>
           </li>
           <li class="table-view-cell">
-              <span>状态:</span><span style='float:right;color:#0099CC'>已付款</span>
+              <span>状态:</span><span style='float:right;color:#0099CC'>已出账</span>
           </li>
           <li class="table-view-cell" style="height:80px;border-radius:10px">
-              <a class="btn btn-primary btn-block" style="width:200px;border-radius:10px;left:50%;margin-left:-100px;background:#5db9de" href='monthDetail.html' data-ignore="push">详 单</a>
+              <a class="btn btn-primary btn-block" style="width:50%;border-radius:10px;left:0;" href='monthDetail.html' data-ignore="push">详 单</a>
+              <a class="btn btn-positive btn-block" style="width:50%;border-radius:10px;left:50%;" href='#myModalexample2' data-ignore="push">已 付 款</a>
           </li>
         </ul>
       </div>
@@ -124,13 +125,33 @@
               <span>出车次数:</span><span style='float:right;color:#0099CC'>30次</span>
           </li>
           <li class="table-view-cell">
-              <span>金额:</span><span style='float:right;color:#0099CC'>40000/10000</span>
+              <span>金额:</span><span style='float:right;color:#0099CC'>601500/601500</span>
           </li>
           <li class="table-view-cell">
-              <span>状态:</span><span style='float:right;color:#0099CC'>已出账</span>
+              <span>状态:</span><span style='float:right;color:#0099CC'>已付款</span>
           </li>
           <li class="table-view-cell" style="height:80px;border-radius:10px">
               <a class="btn btn-primary btn-block" style="width:200px;border-radius:10px;left:50%;margin-left:-100px;background:#5db9de" href='monthDetail.html' data-ignore="push">详 单</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="myModalexample2" class="modal">
+      <header class="bar bar-nav">
+        <a class="icon icon-close pull-right" href="#myModalexample2"></a>
+        <h1 class="title">已付款</h1>
+      </header>
+
+      <div class="content">
+        <ul class="table-view modelbox detail">
+          <li class="table-view-cell">
+              <span>付款金额:</span><input type="number" value='' style="width:70%;float:right;margin:0">
+          </li>
+          <li class="table-view-cell">
+              <span>时间:</span><input type="text" value='2015-10-1' style="width:70%;float:right;margin:0">
+          </li>
+          <li class="table-view-cell" style="height:80px;border-radius:10px">
+              <a class="btn btn-primary btn-block" style="width:200px;border-radius:10px;left:50%;margin-left:-100px;background:#5db9de" href='monthcheck.html' data-ignore="push">付 款</a>
           </li>
         </ul>
       </div>
