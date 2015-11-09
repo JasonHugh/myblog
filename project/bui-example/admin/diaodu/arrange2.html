@@ -1,0 +1,42 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>包车排班</title>
+	<link href="../assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
+	<link href="../assets/css/bui-min.css" rel="stylesheet" type="text/css" />
+  	<link href="../css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<h1>包车排班<span style='margin-left:100px;font-size:14px;font-weight:normal'>编号：201509190001</span></h1>
+	<h2>用车企业：杭州制氧机有限公司<span style='margin-left:80px'>联系人：徐枫   133********</span></h2>
+	<h2>期限：2015年9月19日至2016年9月18日</h2>
+	<h2>排班表：</h2>
+	<div id="grid" style="margin-top:10px"></div>
+	<h2><a href='paiban.html' class="button">排班</a></h2>
+</body>
+<script type="text/javascript" src="../assets/js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="../assets/js/bui-min.js"></script>
+<script type="text/javascript" src="../assets/js/config-min.js"></script>
+<script type="text/javascript">
+BUI.use('common/page');
+BUI.use('bui/grid',function (Grid) {
+    var data = [{id:'0001',name:'浙AM502H  张荣泉',day:'浙AM502H  张荣泉',address:'浙AM502H  张荣泉',stop:'浙AM502H  张荣泉',cnum:'浙AM502H  张荣泉',car:'浙AM502H  张荣泉',siji:'浙AM502H  张荣泉'},{id:'0002',name:'浙AF922H  董建华',day:'浙AF922H  董建华',address:'浙AF922H  董建华',stop:'浙AF922H  董建华',cnum:'浙AF922H  董建华',car:'浙AF922H  董建华',siji:'浙AF922H  董建华'}]
+ 
+        grid = new Grid.SimpleGrid({
+          render : '#grid', //显示Grid到此处
+          columns : [
+            {title:'班次',dataIndex:'id',width:80},
+            {title:'一',dataIndex:'name',width:100},
+            {title:'二',dataIndex:'day',width:100},
+            {title:'三',dataIndex:'address',width:100},
+            {title:'四',dataIndex:'stop',width:100},
+            {title:'五',dataIndex:'cnum',width:100},
+            {title:'六',dataIndex:'car',width:100},
+            {title:'日',dataIndex:'siji',width:100}
+          ]
+        });
+      grid.render();
+      grid.showData(data);
+  });
+</script>
+</html>

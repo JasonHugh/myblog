@@ -1,0 +1,121 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>我的客户</title>
+	<link href="../assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
+	<link href="../assets/css/bui-min.css" rel="stylesheet" type="text/css" />
+	<link href="../css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div id="grid"></div>
+	<div id="content" class="hide">
+      <form id="J_Form" class="form-horizontal">
+        <div class="row">
+          <div class="control-group span8">
+            <label class="control-label"><s>*</s>姓名：</label>
+            <div class="controls">
+              <input name="name" type="text" data-rules="{required:true}" class="input-normal control-text">
+            </div>
+          </div>
+          <div class="control-group span8">
+            <label class="control-label"><s>*</s>性别：</label>
+            <div class="controls">
+              <select  data-rules="{required:true}"  name="type" class="input-normal"> 
+                <option value="">请选择</option>
+                <option value="男">男</option>
+                <option value="女">女</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="control-group span15 ">
+            <label class="control-label"><s>*</s>手机：</label>
+            <div class="controls">
+              <input name="phone" type="text" data-rules="{required:true}" class="input-normal control-text">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="control-group span15">
+            <label class="control-label"><s>*</s>单位：</label>
+            <div class="controls control-row4">
+              <textarea name="memo" class="input-large" type="text"></textarea>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+</body>
+
+<script type="text/javascript" src="../assets/js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="../assets/js/bui-min.js"></script>
+<script type="text/javascript" src="../assets/js/config-min.js"></script>
+<script type="text/javascript">
+BUI.use('common/page');
+BUI.use(['bui/grid','bui/data'],function (Grid,Data) {
+
+    var columns = [{title : '联系人姓名',dataIndex :'name'},
+            {title : '性别',dataIndex :'type'},
+            {title : '手机',dataIndex :'phone'},
+            {title : '单位',dataIndex :'memo',width:200},
+            {title : '操作',renderer : function(){
+              return '<span class="btn-edit button button-small"><i class="icon-edit"></i>编辑</span>';
+            }}
+          ],
+      //默认的数据
+      data = [
+        {id:'1',name:'徐枫',type:'男',phone:'188********',memo:'杭州野驴户外用品有限公司'},
+        {id:'1',name:'徐枫',type:'女',phone:'188********',memo:'杭州野驴户外用品有限公司'}
+      ],
+      store = new Data.Store({
+        data:data
+      }),
+      editing = new Grid.Plugins.DialogEditing({
+        contentId : 'content',
+        triggerCls : 'btn-edit'
+      }),
+      grid = new Grid.Grid({
+        render : '#grid',
+        columns : columns,
+        forceFit : true,
+        store : store,
+        plugins : [Grid.Plugins.CheckSelection,editing],
+        tbar:{
+          items : [{
+            btnCls : 'button button-small',
+            text : '<i class="icon-plus"></i>添加',
+            listeners : {
+              'click' : addFunction
+            }
+          },
+          {
+            btnCls : 'button button-small',
+            text : '<i class="icon-remove"></i>删除',
+            listeners : {
+              'click' : delFunction
+            }
+          }]
+        }
+
+      });
+    grid.render();
+
+    function addFunction(){
+      var newData = {name :''};
+      editing.add(newData); //添加记录后，直接编辑
+    }
+
+    function delFunction(){
+      var selections = grid.getSelection();
+      store.remove(selections);
+    }
+    var logEl = $('#log');
+    $('#btnSave').on('click',function(){
+
+      var records = store.getResult();
+      logEl.text(BUI.JSON.stringify(records));
+    });
+});
+</script>
+</html>
