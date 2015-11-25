@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>首页</title>
+<meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link href="css/ratchet.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="bar bar-nav">
+    <h1 class="title">首页</h1>
+</header>
+<div class="content" style="background:url(images/reg-bg.jpg) no-repeat center center;background-size: auto 100%">
+    <ul class="table-view box-list">
+      <li class="table-view-cell" style="height:50px;margin-top:30px">
+          <a href="charge.html" data-ignore="push" class="btn btn-danger btn-block" style="width:100%;left:0;border-radius:0">用车企业</a>
+      </li>
+      <li class="table-view-cell" style="height:50px;margin-top:30px">
+          <a href="business/myCustomer.html" data-ignore="push" class="btn btn-positive btn-block" style="width:100%;left:0;border-radius:0">业务管理</a>
+      </li>
+      <li class="table-view-cell" style="height:50px;margin-top:30px">
+          <a href="driver/index.html" data-ignore="push" class="btn btn-primary btn-block" style="width:100%;left:0;border-radius:0">司机</a>
+      </li>
+    </ul>
+</div>
+
+</body>
+<script src="js/ratchet.js"></script>
+<script type="text/javascript" src='js/jquery-2.1.1.min.js'></script>
+<script type="text/javascript">
+var viewport = document.querySelector("meta[name=viewport]");
+var winWidths = window.screen.width;
+viewport.setAttribute('content', 'width='+winWidths+',initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui');
+</script>
+<script type="text/javascript" src='js/commen.js'></script>
+</html>

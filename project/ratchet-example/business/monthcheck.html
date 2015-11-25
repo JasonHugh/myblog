@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>月账单</title>
+<meta name="viewport" content="width=device-width;initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link href="../css/ratchet.css" rel="stylesheet">
+<link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<header class="bar bar-nav">
+      <a  class="icon icon-list pull-left"></a>
+      <h1 class="title">月账单</h1>
+</header>
+<div class="content">
+<div style="text-align:center">
+<select style="width:80%;height:30px;margin:10px auto">
+                    <option value="">请选择月份</option>
+                    <option value="">1月</option>
+                    <option value="">2月</option>
+                    <option value="">3月</option>
+                    <option value="">4月</option>
+                    <option value="">5月</option>
+                    <option value="">6月</option>
+                    <option value="">7月</option>
+                    <option value="">8月</option>
+                    <option value="">9月</option>
+                    <option value="">10月</option>
+                    <option value="">11月</option>
+                    <option value="">12月</option>
+                </select></div>
+    <div class="segmented-control" style="width:90%;margin:0 auto;">
+      <a class="control-item active" href="#item1mobile">
+        所有
+      </a>
+      <a class="control-item" href="#item2mobile">
+        已出帐
+      </a>
+      <a class="control-item" href="#item3mobile">
+        已付款
+      </a>
+    </div>
+    <div class="card" style="margin:10px 0;border-top:none">
+      <span id="item1mobile" class="control-content active">
+        <ul class="table-view">
+          <li class="table-view-cell">
+            <a class="navigate-right" href='#myModalexample'>
+              <div class='box'>出</div>
+              <span class='font-13'>徐翔/杭州制氧机制造有限公司</span><br/><span class='font-13'>金额：40000/10000</span>
+            </a>
+          </li>
+          <li class="table-view-cell">
+            <a class="navigate-right" href='#myModalexample1'>
+              <div class='box' style="background:#88b864">付</div>
+              <span class='font-13'>马飞/杭州中青旅行社有限公司</span><br/><span class='font-13'>金额：601500/601500</span>
+            </a>
+          </li>
+        </ul>
+      </span>
+      <span id="item2mobile" class="control-content">
+        <ul class="table-view">
+          
+          <li class="table-view-cell">
+            <a class="navigate-right" href='#myModalexample'>
+              <div class='box'>出</div>
+              <span class='font-13'>徐翔/杭州制氧机制造有限公司</span><br/><span class='font-13'>金额：40000/10000</span>
+            </a>
+          </li>
+        </ul>
+      </span>
+      <span id="item3mobile" class="control-content">
+        <ul class="table-view">
+          <li class="table-view-cell">
+            <a class="navigate-right" href='#myModalexample1'>
+              <div class='box' style="background:#88b864">付</div>
+              <span class='font-13'>马飞/杭州中青旅行社有限公司</span><br/><span class='font-13'>金额：601500/601500</span>
+            </a>
+          </li>
+        </ul>
+      </span>
+    </div>
+
+    <div id="myModalexample" class="modal">
+      <header class="bar bar-nav">
+        <a class="icon icon-close pull-right" href="#myModalexample"></a>
+        <h1 class="title">详情</h1>
+      </header>
+
+      <div class="content">
+        <ul class="table-view modelbox detail">
+          <li class="table-view-cell">
+              <span>客户:</span><span style='float:right;color:#0099CC'>徐翔/杭州制氧机制造有限公司</span>
+          </li>
+          <li class="table-view-cell">
+              <span>出车次数:</span><span style='float:right;color:#0099CC'>600次</span>
+          </li>
+          <li class="table-view-cell">
+              <span>金额:</span><span style='float:right;color:#0099CC'>40000/10000</span>
+          </li>
+          <li class="table-view-cell">
+              <span>状态:</span><span style='float:right;color:#0099CC'>已出账</span>
+          </li>
+          <li class="table-view-cell" style="height:80px;border-radius:10px">
+              <a class="btn btn-primary btn-block" style="width:50%;border-radius:10px;left:0;" href='monthDetail.html' data-ignore="push">详 单</a>
+              <a class="btn btn-positive btn-block" style="width:50%;border-radius:10px;left:50%;" href='#myModalexample2' data-ignore="push">已 付 款</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="myModalexample1" class="modal">
+      <header class="bar bar-nav">
+        <a class="icon icon-close pull-right" href="#myModalexample1"></a>
+        <h1 class="title">详情</h1>
+      </header>
+
+      <div class="content">
+        <ul class="table-view modelbox detail">
+          <li class="table-view-cell">
+              <span>客户:</span><span style='float:right;color:#0099CC'>马飞/杭州中青旅行社有限公司</span>
+          </li>
+          <li class="table-view-cell">
+              <span>出车次数:</span><span style='float:right;color:#0099CC'>30次</span>
+          </li>
+          <li class="table-view-cell">
+              <span>金额:</span><span style='float:right;color:#0099CC'>601500/601500</span>
+          </li>
+          <li class="table-view-cell">
+              <span>状态:</span><span style='float:right;color:#0099CC'>已付款</span>
+          </li>
+          <li class="table-view-cell" style="height:80px;border-radius:10px">
+              <a class="btn btn-primary btn-block" style="width:200px;border-radius:10px;left:50%;margin-left:-100px;background:#5db9de" href='monthDetail.html' data-ignore="push">详 单</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="myModalexample2" class="modal">
+      <header class="bar bar-nav">
+        <a class="icon icon-close pull-right" href="#myModalexample2"></a>
+        <h1 class="title">已付款</h1>
+      </header>
+
+      <div class="content">
+        <ul class="table-view modelbox detail">
+          <li class="table-view-cell">
+              <span>付款金额:</span><input type="number" value='' style="width:70%;float:right;margin:0">
+          </li>
+          <li class="table-view-cell">
+              <span>时间:</span><input type="text" value='2015-10-1' style="width:70%;float:right;margin:0">
+          </li>
+          <li class="table-view-cell" style="height:80px;border-radius:10px">
+              <a class="btn btn-primary btn-block" style="width:200px;border-radius:10px;left:50%;margin-left:-100px;background:#5db9de" href='monthcheck.html' data-ignore="push">付 款</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</div>
+
+<div class='slide-nav'>
+    <ul class="nav">
+      <li>我的客户<ul class="sub-nav">
+      <li><a href='myCustomer.html' data-ignore="push">我的客户</a></li>
+    </ul></li>
+      <li>临时用车<ul class="sub-nav">
+      <li><a href='waitDeal.html' data-ignore="push">待安排车辆</a></li>
+      <li><a href='waitSign.html' data-ignore="push">待签合同</a></li>
+      <li><a href='waitDo.html' data-ignore="push">待执行</a></li>
+      <li><a href='waitPay.html' data-ignore="push">待付款</a></li>
+    </ul></li>
+      <li>长期包车<ul class="sub-nav">
+      <li><a href='waitDeal1.html' data-ignore="push">待安排车辆</a></li>
+      <li><a href='waitSign1.html' data-ignore="push">待签合同</a></li>
+      <li><a href='alrSign.html' data-ignore="push">已签合同</a></li>
+    </ul></li>
+      <li>账单管理<ul class="sub-nav">
+      <li><a href='monthcheck.html' data-ignore="push">月账单</a></li>
+      <li><a href='monthDetail.html' data-ignore="push">月详单</a></li>
+    </ul></li>
+    </ul>
+</div>
+</body>
+<script type="text/javascript" src='../js/jquery-2.1.1.min.js'></script>
+<script src="../js/ratchet.js"></script>
+<script type="text/javascript">
+var viewport = document.querySelector("meta[name=viewport]");
+var winWidths = window.screen.width;
+viewport.setAttribute('content', 'width='+winWidths+',initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui');
+</script>
+<script type="text/javascript" src='../js/commen.js'></script>
+</html>
