@@ -84,5 +84,5 @@ for row in ul.find_all('li'):
 ```
 
 ***以上为部分讲解，下面是代码链接***
- 
+[抓取到的信息](http://hayson.top/zufang.html)
 [github完整代码](https://github.com/JasonHugh/py_crawler/blob/master/zufang.py)
