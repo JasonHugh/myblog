@@ -18,3 +18,7 @@ github_username:  JasonHugh
 
 # Build settings
 markdown: kramdown
+
+pygments: true
+safe: true
+auto: true
