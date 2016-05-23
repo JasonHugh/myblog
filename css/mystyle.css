@@ -1,0 +1,7 @@
+body{font-size:16px;font-family: '微软雅黑'}
+.site-header{background: #515865;color: #fff;}
+.site-title, .site-title:visited{color:#fff;}
+.site-nav .page-link{color:#fff}
+.wrapper{width:800px;padding:0;}
+.post-list > .post-title{border-left:3px solid #257E92;padding:3px 10px;font-size: 24px}
+.post-list > .post-title > h2{margin-top:10px;}

@@ -18,6 +18,3 @@ github_username:  JasonHugh
 
 # Build settings
 markdown: kramdown
-
-highlighter: pygments
-safe: true
